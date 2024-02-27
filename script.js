@@ -44,6 +44,8 @@ const compArray = [
   compEight,
 ];
 
+let randomIndex = 0;
+
 function toggleHide(comp) {
   comp.children[1].classList.toggle("hide");
 }
@@ -67,8 +69,21 @@ nextBtn.addEventListener("click", () => {
   });
   // Then draw random number between 0 and 8.
   let randomNumber = Math.floor(Math.random() * 9);
+
+  if (randomNumber === randomIndex) {
+    if (randomNumber === 8) {
+      randomNumber = 7;
+    } else if (randomNumber === 0) {
+      randomNumber = 1;
+    } else {
+      randomNumber++;
+    }
+  }
+
   // Then set chosen comp to display
   compArray[randomNumber].classList.toggle("hide");
+  randomIndex = randomNumber;
+  console.log(randomIndex);
 });
 
 function showAll() {
