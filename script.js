@@ -70,3 +70,10 @@ nextBtn.addEventListener("click", () => {
   // Then set chosen comp to display
   compArray[randomNumber].classList.toggle("hide");
 });
+
+function showAll() {
+  compArray.forEach((comp) => {
+    comp.classList.remove("hide");
+    comp.children[1].classList.remove("hide");
+  });
+}

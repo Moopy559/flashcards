@@ -39,6 +39,9 @@ button {
     bottom: 60px;
     right: 50%;
   }
+  li {
+    margin-bottom: 1rem;
+  }
 }
 
 .answer {
